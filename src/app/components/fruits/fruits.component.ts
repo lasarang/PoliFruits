@@ -1,4 +1,4 @@
-import { Component ,OnInit, OnChanges, HostBinding, Input, SimpleChanges } from '@angular/core';
+ import { Component ,OnInit, OnChanges, HostBinding, Input, SimpleChanges } from '@angular/core';
 import {FruitService} from '../../services/fruit.service';
 import {SideBarService} from '../../services/side-bar.service';
 
