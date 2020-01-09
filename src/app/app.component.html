@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">PoliFruits</a>
+</nav>
+
+
+<div class="container pt-4">
+  <div class="row">
+
+    <div class="col-md-5">
+      <app-dispenser-form> </app-dispenser-form>
+      <app-dispensers (messageEvent) = 'receiveMessage(event)'> </app-dispensers>
+    </div>
+
+
+     <div class="col-md-5" >
+       <app-fruit-form > </app-fruit-form>
+       <app-fruits [dispenserUrl]='message'></app-fruits> 
+
+      </div>
+
+     
+
+    </div>
+    
+
+        
+     
+   
+  
+  
+</div>

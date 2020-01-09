@@ -1,0 +1,79 @@
+<div *ngIf= "dispensers.lenght > 0 ; else nodispensers">
+ 
+  
+</div>
+
+
+<ng-template #nodispensers>
+  <!--
+  <p> There are not fruits yet!</p>
+  -->
+
+</ng-template>
+
+
+ <ul>
+    <li *ngFor="let d of dispensers" class="list-group-item list-group-item-action">
+    <h3> {{d.title}} </h3>
+ 
+    <h3> coords: [{{d.coords.latitude}} , {{d.coords.longitude}}] </h3>
+
+    <p> estado: {{d.estado}} </p>
+
+    <p> {{d.rating}} </p>
+
+    <button (click)= "deleteDispenser($event, d)" class="btn btn-danger">
+      Delete
+    </button>
+
+   <button (click)="editDispenser($event, d)" class="btn btn-secondary">
+    Edit
+    
+  </button>
+  
+  <!-->
+    <button (click)="showFruits($event, d)" class="btn btn-warning">
+  <button (click)="click(event)" class="btn btn-warning">
+
+  <-->
+      <button (click)="showFruits($event, d)" class="btn btn-warning">
+
+    Fruits
+    
+  </button>
+
+
+  <div *ngIf="editing && editingDispenser.id == d.id">
+    <form (ngSubmit)="updateDispenser()">
+
+    <div class="form-group mt-3">
+      <input type="text" name="title" [(ngModel)]="editingDispenser.title" class="form-control">
+    </div>
+
+    <div class="form-group">
+          <input type="text" name="rating" [(ngModel)]="editingDispenser.rating">
+    </div>
+
+
+      <input type="text" name="estado" [(ngModel)]="editingDispenser.estado">
+
+      <div class="form-group">
+
+        
+          <input aria-labelledby="geopoint_latitude" id="latitud" class="geopoint_latitude ng-pristine ng-invalid ng-touched" formcontrolname="latitude" type="number" [(ngModel)]="latitude" [ngModelOptions]="{standalone: true}" step="0.0000001">
+
+          <input aria-labelledby="geopoint_longitude" id="longitud" class="geopoint_longitude ng-pristine ng-invalid ng-touched" formcontrolname="longitude" type="number" [(ngModel)]="longitude"  step="0.0000001" [ngModelOptions]="{standalone: true}">
+
+
+      </div>
+      
+     
+      <button type="submit" class="btn btn-success btn-block">
+        Update
+      </button>
+    </form>
+
+  </div>
+
+    </li>
+  </ul>

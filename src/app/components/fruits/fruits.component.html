@@ -1,0 +1,57 @@
+<div *ngIf= "fruits.lenght > 0 ; else nofruits">
+ 
+  
+</div>
+
+
+<ng-template #nofruits>
+  <!--
+  <p> There are not fruits yet!</p>
+  -->
+
+</ng-template>
+
+
+ <ul>
+    <li *ngFor="let f of fruits " class="list-group-item list-group-item-action active">
+
+      
+    <h1> {{message}}</h1>
+
+    <h5> {{f.nombre}} </h5>  
+
+
+    <h3> {{f.cantidad}} </h3>
+
+    <p> {{f.imgUrl}} </p>
+
+    <button (click)= "deleteFruit($event, f)" class="btn btn-danger">
+      Delete
+    </button>
+
+   <button (click)="editFruit($event, f)" class="btn btn-secondary">
+    Edit
+  </button>
+
+
+  <div *ngIf="editing && editingFruit.id == f.id">
+    <form (ngSubmit)="updateFruit()">
+    <div class="form-group mt-3">
+      <input type="text" name="nombre" [(ngModel)]="editingFruit.nombre" class="form-control">
+    </div>
+
+    <div class="form-group">
+          <input type="number" name="cantidad" [(ngModel)]="editingFruit.cantidad">
+    </div>
+
+  
+      <input type="imgUrl" name="imgUrl" [(ngModel)]="editingFruit.imgUrl">
+      <button type="submit" class="btn btn-success btn-block">
+        Update
+      </button>
+    </form>
+
+  </div>
+
+    </li>
+  </ul>

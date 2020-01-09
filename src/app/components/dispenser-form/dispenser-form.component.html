@@ -1,0 +1,35 @@
+<div class="card card-body">
+<form (ngSubmit)="addDispenser()">
+
+
+  <div class="form-group">
+
+    <input type="text" name="title" [(ngModel)]="dispenser.title"
+    class="form-control" placeholder="title">
+
+    <input type="text" name="id" [(ngModel)]="dispenser.id"
+    class="form-control" placeholder="id">
+
+
+    <input type="text" name="estado" [(ngModel)]="dispenser.estado"
+    class="form-control" placeholder="estado">
+  
+  <input type="text" name="rating" [(ngModel)]="dispenser.rating"
+    class="form-control" placeholder="rating">
+
+    <input type="number" name="" [(ngModel)]="latitude"
+    class="form-control" placeholder="latitude" [ngModelOptions]="{standalone: true}">
+
+    <input type="number" name="" [(ngModel)]="longitude"
+    class="form-control" placeholder="longitude" [ngModelOptions]="{standalone: true}">
+
+  </div>
+
+
+	<button type = "submit" class="btn btn-dark btn-block">
+    Save
+  </button>
+
+</form>
+
+</div>

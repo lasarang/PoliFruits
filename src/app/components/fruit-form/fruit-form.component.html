@@ -1,0 +1,23 @@
+<div class="card card-body">
+<form (ngSubmit)="addFruit()">
+
+
+  <div class="form-group">
+
+    <input type="text" name="nombre" [(ngModel)]="fruit.nombre"
+  class="form-control" placeholder="Nombre de la fruta">
+	<input type="number" name="cantidad" [(ngModel)]="fruit.cantidad"
+   class="form-control" placeholder="Cantidad">
+	<input type="text" name="imgUrl" [(ngModel)]="fruit.imgUrl"
+   class="form-control" placeholder="ImgUrl">
+
+  </div>
+
+
+	<button type = "submit" class="btn btn-dark btn-block">
+    Save
+  </button>
+
+</form>
+
+</div>
